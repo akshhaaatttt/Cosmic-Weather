@@ -2,7 +2,7 @@ import axios from 'axios';
 import { NASAAPODResponse } from '../types';
 
 // NASA API service
-const NASA_API_KEY = 'ToLvhi82nOMhuxvJq38OzqZOyTEtXbA7NNFUZq8r';
+const NASA_API_KEY = import.meta.env.VITE_NASA_API_KEY;
 const NASA_API_URL = 'https://api.nasa.gov/planetary/apod';
 
 export const fetchAstronomyPictureOfDay = async (): Promise<NASAAPODResponse> => {
