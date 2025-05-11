@@ -3,6 +3,11 @@ import { NASAAPODResponse } from '../types';
 
 // NASA API service
 const NASA_API_KEY = import.meta.env.VITE_NASA_API_KEY;
+
+if (!NASA_API_KEY) {
+  console.error('NASA API key is not defined. Please check your environment variables.');
+}
+
 const NASA_API_URL = 'https://api.nasa.gov/planetary/apod';
 
 export const fetchAstronomyPictureOfDay = async (): Promise<NASAAPODResponse> => {

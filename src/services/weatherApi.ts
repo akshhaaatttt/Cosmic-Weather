@@ -2,6 +2,11 @@ import axios from 'axios';
 import { WeatherResponse } from '../types';
 
 const WEATHER_API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+
+if (!WEATHER_API_KEY) {
+  console.error('Weather API key is not defined. Please check your environment variables.');
+}
+
 const BASE_WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const GEOCODING_API_URL = 'https://api.openweathermap.org/geo/1.0/direct';
 
